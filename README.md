@@ -22,3 +22,26 @@ Esta aplicación web, desarrollada en **Spring Boot**, permite a los usuarios ex
   - `spring-boot-devtools`
   - `spring-boot-starter-thymeleaf`
   - `spring-boot-starter-validation`
+
+## Instalación
+
+1. **Clonar el repositorio**:
+2. **Configuración del proyecto:**
+   - Asegúrate de tener configurado un archivo application.properties para conectar a la base de datos y a la API de Disney.
+   - Configura las credenciales y propiedades necesarias para el correcto funcionamiento de la aplicación.
+3. **Ejecutar la aplicación**
+
+## Uso
+1. Registro de Usuario: Los nuevos usuarios deben registrarse para poder acceder a todas las funcionalidades de la aplicación.
+2. Búsqueda de Personajes: Utiliza la barra de búsqueda para encontrar personajes de Disney.
+3. Agregar a Mis Personajes: Haz clic en el botón "Guardar" para guardar un personaje.
+4. Compartir Personajes: Puedes compartir personajes seleccionados con tus amigos registrados haciendo clic en el botón "Enviar".
+5. Puntuación: Asigna una puntuación a los personajes guardados o que te han compartido según tu preferencia.
+   
+## Contribuciones
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
+
+Haz un fork del repositorio.
+Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
+Realiza tus cambios y haz commit (git commit -m 'Agregada nueva funcionalidad').
+Envía un pull request.
