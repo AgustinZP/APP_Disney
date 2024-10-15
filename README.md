@@ -39,9 +39,4 @@ Esta aplicación web, desarrollada en **Spring Boot**, permite a los usuarios ex
 5. Puntuación: Asigna una puntuación a los personajes guardados o que te han compartido según tu preferencia.
    
 ## Contribuciones
-Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
-
-Haz un fork del repositorio.
-Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
-Realiza tus cambios y haz commit (git commit -m 'Agregada nueva funcionalidad').
-Envía un pull request.
+Las contribuciones son bienvenidas.
