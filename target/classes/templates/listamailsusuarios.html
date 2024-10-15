@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/listamailsusuarios.css">
+	<title>Lista de Mails de Usuarios</title>
+</head>
+
+<body>
+	<div class="bar-menu">
+		<nav class="navbar-brand">
+			<a href="/user/login"><img src="/logo.png" width="150"></a>
+		</nav>
+		<h2>Agustin Zaragoza Pérez</h2>
+	</div>
+	
+	<div class="container">
+		<h1>Selecciona el usuario con el quieres compartir el personaje</h1>
+		
+		<ul>
+	        <li th:each="usuario, iterStat : ${usuarios}">
+	            <form action="/personajes/personajescompartidos" th:object="${personaje}" method="get">
+	                <input type="hidden" name="email" th:value="${usuario.email}">
+	                <!-- Utiliza ${iterStat.index} para acceder al índice y obtener el ID del personaje correspondiente -->
+	                <input type="hidden" name="id" th:value="${personajeIds[__${iterStat.index}__]}">
+	                <input type="hidden" name="name" th:value="${name}">
+	                <button type="submit" th:text="${usuario.email}"></button>
+	            </form>
+	        </li>
+	    </ul>
+		
+	</div>
+
+</body>
+
+</html>

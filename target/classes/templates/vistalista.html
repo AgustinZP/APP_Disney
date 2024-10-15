@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/vistalista.css">
+	<title>Vista Lista Personajes</title>
+</head>
+
+<body>
+	<div class="bar-menu">
+		<nav class="navbar-brand">
+			<a href="/user/login"><img src="/logo.png" width="150"></a>
+		</nav>
+		<h2>Agustin Zaragoza Pérez</h2>
+		<ul class="my-characters">
+			<li class="nav-item">
+				<!-- Enlace para ir a la pagina de buscar personajes -->
+    			<a class="nav-link volver" href="/personajes/buscar"><< Ir a buscar personajes</a>
+				<a class="nav-link" href="/personajes/mispersonajes">Mis Personajes</a>
+				<a class="nav-link" href="/personajes/mispersonajescompartidos">Personajes compartidos para mi</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="main-container" th:if="${#lists.isEmpty(personajes)}">
+	    <p class="mensaje">No hay personajes guardados o compartidos.</p>
+	</div>
+	
+	<!-- Mostrar mensaje de confirmación -->
+	<div th:if="${mensaje}" class="mensaje">
+	    <p th:text="${mensaje}"></p>
+	</div>
+	
+	<!-- Mostrar mensaje de error -->
+	<div th:if="${mensajeError}" class="mensaje">
+	    <p th:text="${mensajeError}"></p>
+	</div>
+
+
+
+	<!-- Iterar sobre la lista de personajes compartidos -->
+	<div class="main-container" th:if="${not #lists.isEmpty(personajes)}">
+		<ul class="character-list">
+			<h1 th:text="${titulo}"></h1>
+			<li th:each="personaje, index : ${personajes}">
+				<table class="main-table">
+					<tbody>
+						<tr>
+							<td class="character-image">
+								<img th:src="${personaje.personaje.imageUrl}" class="character-image"
+									alt="character image">
+							</td>
+							
+							<td>
+								 <h3 class="character-name">
+					                <a th:if="${tipo == 'propios'}" th:href="'/personajes/mispersonajes/' + ${personaje.id}" th:text="${personaje.personaje.name}"></a>
+					                <a th:if="${tipo == 'compartidos'}" th:href="'/personajes/mispersonajescompartidos/' + ${personaje.personaje.id}" th:text="${personaje.personaje.name}"></a>
+					            </h3>
+							</td>
+							
+							<td>
+								<p class="user-name" th:if="${emailsUsuariosQueCompartieron != null}">Usuario que compartió:</p>
+								<!-- Verificar si la lista de emails no es nula antes de acceder a los elementos -->
+								<p class="user-name" th:if="${emailsUsuariosQueCompartieron != null}"
+									th:text="${emailsUsuariosQueCompartieron[__${index.index}__]}"></p>
+							</td>
+							
+							<td class="character-puntuacion">
+								<span class="user-name">Puntuacion:</span>
+								<p class="user-name" th:if="${tipo == 'propios' and personaje.puntuacion !=0}" th:text="${personaje.puntuacion}"></p>
+								<p class="user-name" th:if="${tipo == 'compartidos' and personaje.puntuacion != 0}" th:text="${personaje.puntuacion}"></p>
+							</td> 
+							
+							<td>
+								<form th:action="@{/personajes/guardarpuntuacion}" method="get" th:object="${personaje}">
+									<input type="hidden" name="tipo" th:value="${tipo}" />
+									<input type="hidden" name="id" th:value="${personaje.id}">
+									<input type="number" id="personaje.id" name="puntuacion" placeholder="1-5" value=""/>
+									<button type="submit">Puntuar</button>
+								</form>
+							</td> 
+
+						</tr>
+					</tbody>
+				</table>
+			</li>
+		</ul>
+	</div>
+	
+    
+</body>
+
+</html>

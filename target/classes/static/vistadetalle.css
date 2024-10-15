@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    color: white; /* Texto en blanco para todo */
+}
+
+body {
+	/*background-image: url(fondo.webp);*/
+	background:darkblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.bar-menu{
+	display: flex;
+	width: 100%;
+}
+
+.my-characters{
+	flex-direction: column;
+	padding: 20px;
+	margin-top: 20px;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.my-characters .nav-item {
+    margin-left: 15px; /* Espacio entre los enlaces */
+}
+
+.nav-link{
+	color: aliceblue;
+	margin-left: 25px;
+}
+
+.volver{
+	color: khaki;
+}
+
+/*logo*/
+.navbar-brand {
+    margin: 20px 20px 0 20px;
+    width: 35%;
+}
+
+/*Titulo autor*/
+h2{
+	width: 20%;
+	flex-direction: column;
+	padding: 20px;
+	margin-top: 20px;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.character-info {
+    margin-right: 20px; /* Espacio entre la imagen y los detalles */
+    display: flex;
+}
+
+h3 {
+	color: salmon;
+}
+
+/* Estilos para la imagen */
+.character-image {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+    float: left;
+}
+
+/* Estilos para el contenedor de las listas de elementos */
+.character-details {
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las listas se envuelvan en filas si no hay suficiente espacio */
+    align-items: flex-start; /* Alinea las listas en la parte superior */
+}
+
+.character-name {
+    font-size: 40px;
+    margin-top: 0;
+    margin-right: 20px; /* Espacio entre el nombre y la URL de origen */
+}
+
+.source-url {
+    font-size: 14px;
+    color: white;
+    text-decoration: underline;
+}
+
+/* Estilos para las listas de elementos */
+.character-list {
+    list-style-type: none; /* Elimina las viñetas */
+    padding: 0;
+    margin: 0; /* Elimina el margen para evitar espacios adicionales */
+    flex: 1; /* Permite que las listas se expandan para ocupar el espacio disponible */
+}
+
+.character-list li {
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    font-size: 16px; 
+    color: aquamarine;
+}
+
+/* Estilos para los títulos de las listas */
+.character-list h4 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Espacio entre los títulos de las listas y las listas de elementos */
+    font-size: 30px;
+    padding: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-bottom: 1px solid #ccc;
+    }
+
+

@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background:darkblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.bar-menu{
+	display: flex;
+	width: 100%;
+}
+
+.my-characters{
+	flex-direction: column;
+	padding: 20px;
+	margin-top: 20px;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.my-characters .nav-item {
+    margin-left: 15px; /* Espacio entre los enlaces */
+}
+
+.nav-link{
+	color: aliceblue;
+	margin-left: 25px;
+}
+
+.volver{
+	color: khaki;
+}
+
+/*logo*/
+.navbar-brand {
+    margin: 20px 20px 0 20px;
+    width: 35%;
+}
+
+h2{
+	width: 20%;
+	flex-direction: column;
+	padding: 20px;
+	margin-top: 20px;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 20px;
+	color: aliceblue;
+}
+
+.search{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	padding: 5px;;
+}
+
+.title-search{
+	padding: 20px;
+	text-align: center;
+	color: aliceblue;
+}
+
+.input-search{
+	padding: 5px 10px;
+	margin-top: 5px;
+	width: 250px;
+}
+
+.submit-search{
+	margin-top: 10px;
+	width: 100px;
+	padding: 5px 10px;
+	background-color: #77c9ff;
+	font-weight: bold;
+	color: #2304ac;
+}
+
+.main-container{
+	width: 100%;
+	align-items: center;
+	justify-content: center;	
+	display: flex;
+}
+
+.character-list{
+	width: 100%;
+	max-width: 1000px;
+	padding: 20px;
+	margin: 20px;
+	list-style-type: none;
+	position: relative;
+}
+
+.main-table{
+	width: 100%;
+	height: auto;
+	align-items: center;
+	justify-content: center;
+	background-color: lightskyblue;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+
+.main-table tbody{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-table tbody tr{
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+    justify-content: space-between;
+}
+
+.character-image{
+	display: flex;
+	flex-direction: column;
+}
+
+.character-name{
+	color: orangered;
+	margin-right: 20px; 
+	margin-left: 15px;   
+}
+
+.character-image img{
+	width:200px;
+	height: 200px;
+	object-fit: contain;
+	margin-top: 15px;
+}
+
+.btn-primary{
+	margin-top: 10px;
+	width: 100px;
+	padding: 5px 10px;
+	background-color: ghostwhite;
+	font-weight: bold;
+	color:blue;
+}
+
+.btn-primary:hover{
+	background-color: blue;
+    color: ghostwhite;
+	}

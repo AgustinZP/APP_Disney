@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/registro.css">
+	<title>Registro Usuario</title>
+</head>
+
+<body>
+	<nav>
+		<a href="/user/login"><img src="/logo.png" width="150"></a>
+	</nav>
+
+	<div class="container">
+		<h1 class="title">CORRE!!</h1>
+		<p class="text">Un mundo de fantasia te espera.<br>
+			No te lo pierdas!</p>
+	</div>
+
+	<div class="main-container">
+    <form class="form" th:action="@{/user/registrado}" th:object="${user}" method="get">
+        <h2 class="form-title">Regístrate</h2>
+        <div class="form-group">
+            <input type="text" required th:field="*{nombre}">
+            <label>Nombre</label>
+        </div>
+        <div class="form-group">
+            <input type="text" required th:field="*{apellidos}">
+            <label>Apellidos</label>
+        </div>
+        <div class="form-group">
+            <input type="text" required th:field="*{telefono}">
+            <label>Teléfono</label>
+            <p class="error" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></p>
+        </div>
+        <div class="form-group">
+            <input type="text" required th:field="*{anyoNacimiento}">
+            <label>Año Nacimiento</label>
+            <p class="error" th:if="${#fields.hasErrors('anyoNacimiento')}" th:errors="*{anyoNacimiento}"></p>
+        </div>
+        <div class="form-group">
+            <input type="email" required th:field="*{email}">
+            <label>Email</label>                
+        </div>
+        <div class="form-group">
+            <input type="password" required th:field="*{password}">
+            <label>Contraseña</label>
+            <p class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Enviar">
+    </form>
+    <form th:action="@{/user/login}" method="get">
+        <input class="btn btn-primary btn-volver" type="submit" value="Volver Atras">
+    </form>
+</div>
+
+	<footer>
+		<p>Agustin Zaragoza Pérez</p>
+	</footer>
+
+</body>
+
+</html>

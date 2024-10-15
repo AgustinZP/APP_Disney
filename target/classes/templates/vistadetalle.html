@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/vistadetalle.css">
+	<title>Vista Lista Personajes</title>
+</head>
+
+<body>
+	<div class="bar-menu">
+		<nav class="navbar-brand">
+			<a href="/user/login"><img src="/logo.png" width="150"></a>
+		</nav>
+		<h2>Agustin Zaragoza Pérez</h2>
+		<ul class="my-characters">
+			<li class="nav-item">
+				<a class="nav-link volver" href="/personajes/buscar"><< Ir a buscar personajes</a>
+				<a class="nav-link" href="/personajes/mispersonajes">Mis Personajes</a>
+				<a class="nav-link" href="/personajes/mispersonajescompartidos">Personajes compartidos para mi</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="container">
+		<div class="personaje-details">
+			<div class="character-info">
+				<img th:src="${personaje.imageUrl}" alt="Imagen del Personaje" class="character-image">
+				<h3 th:text="${personaje.name}" class="character-name"></h3>
+				
+			</div>
+			
+			<a th:href="${personaje.sourceUrl}" target="_blank" class="source-url">Enlace de Origen</a>
+
+			<div class="character-details">
+				
+				<ul class="character-list">
+					<h4>Peliculas</h4>
+					<li th:each="film : ${personaje.films}" th:text="${film.titulo}"></li>
+				</ul>
+
+				
+				<ul class="character-list">
+					<h4>Cortos</h4>
+					<li th:each="shortFilm : ${personaje.shortFilms}" th:text="${shortFilm.titulo}"></li>
+				</ul>
+
+				
+				<ul class="character-list">
+					<h4>Programas TV</h4>
+					<li th:each="tvShow : ${personaje.tvShows}" th:text="${tvShow.titulo}"></li>
+				</ul>
+
+				
+				<ul class="character-list">
+					<h4>Video Juegos</h4>
+					<li th:each="videoGame : ${personaje.videoGames}" th:text="${videoGame.titulo}"></li>
+				</ul>
+
+				
+				<ul class="character-list">
+					<h4>Parques de Atracciones</h4>
+					<li th:each="parkAttraction : ${personaje.parkAttractions}"
+						th:text="${parkAttraction.nombreParque}"></li>
+				</ul>
+			</div>
+		</div>
+	</div>  
+
+</body>
+
+</html>

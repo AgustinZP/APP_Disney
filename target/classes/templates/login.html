@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/login.css">
+	<title>Login Usuario</title>
+</head>
+
+<body>
+	<nav>
+		<a href="/user/login"><img src="/logo.png" width="150"></a>
+	</nav>
+	<div class="card-body">
+		<h2 class="card-title">Iniciar Sesión</h2>
+		<form th:action="@{/user/logueado}" th:object="${usu}" method="get">
+			<div class="form-group">
+				<input type="email" required th:field="*{email}">
+				<label>Email</label>
+			</div>
+			<div class="form-group">
+				<input type="password" required th:field="*{password}">
+				<label>Contraseña</label>
+
+			</div>
+			<input type="submit" class="btn btn-primary" value="Iniciar Sesión">
+		</form>
+		<form th:action="@{/user/registro}" method="get">
+			<input type="submit" class="btn btn-primary" value="Registro">
+		</form>
+		<div th:if="${correcto}">
+			<div class="alert" role="alert">
+				Correo o contraseñas incorrectos
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>Agustin Zaragoza Pérez</p>
+	</footer>
+</body>
+
+</html>
