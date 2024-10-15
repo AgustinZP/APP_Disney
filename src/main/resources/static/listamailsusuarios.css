@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+	background:darkblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.bar-menu{
+	display: flex;
+	width: 100%;
+}
+
+.my-characters{
+	flex-direction: column;
+	padding: 20px;
+	margin-top: 20px;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.my-characters .nav-item {
+    margin-left: 20px; /* Espacio entre los enlaces */
+}
+
+.nav-link{
+	color: aliceblue;
+	margin-left: 30px;
+}
+
+/*logo*/
+.navbar-brand {
+    margin: 20px 20px 0 20px;
+    width: 40%;
+}
+
+h2{
+	width: 20%;
+	flex-direction: column;
+	padding: 20px;
+	margin-top: 20px;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 20px;
+	color: aliceblue;
+}
+
+.container {
+    text-align: center; /* Alinea el contenido al centro */
+    margin: auto; /* Centra horizontalmente */
+    width: 50%; /* Ancho del contenedor */
+    margin-top: -10px;
+}
+
+/* Estilo para el título principal */
+h1 {
+    color: aliceblue; /* Color del texto */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilo para la lista de usuarios */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilo para cada elemento de la lista */
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para el botón dentro del formulario */
+button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 5px; /* Borde redondeado del botón */
+    cursor: pointer; /* Cambio de cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    border: none; /* Elimina el borde del botón */
+}
+
+/* Estilo para el botón al pasar el cursor sobre él */
+button:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+}
+
+/* Estilo para el enlace de Volver */
+a {
+    color: #007bff; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    margin-top: 10px; /* Espacio superior */
+    display: inline-block; /* Alinea el enlace en línea */
+}
+
+/* Estilo para el enlace de Volver al pasar el cursor sobre él */
+a:hover {
+    text-decoration: underline; /* Subrayado del enlace al pasar el cursor */
+}

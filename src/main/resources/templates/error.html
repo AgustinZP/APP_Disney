@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/error.css">
+	<title>Vista Lista Personajes</title>
+</head>
+
+<body>
+	<div class="bar-menu">
+		<nav class="navbar-brand">
+			<a href="/user/login"><img src="/logo.png" width="150"></a>
+		</nav>
+		<h2>Agustin Zaragoza Pérez</h2>
+		<ul class="my-characters">
+			<li class="nav-item">
+				<!-- Enlace para ir a la pagina de buscar personajes -->
+    			<a class="nav-link volver" href="/user/login"><< Ir a pagina de inicio</a>
+				<a class="nav-link" href="/personajes/mispersonajes">Mis Personajes</a>
+				<a class="nav-link" href="/personajes/mispersonajes">Personajes compartidos para mi</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="error-container">
+        <h1>Error</h1>
+        <p class="error-message">Lo sentimos, se ha producido un error inesperado.</p>
+        <p>Por favor, inténtalo de nuevo más tarde.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/vistabusqueda.css">
+	<title>Buscar Personajes</title>
+</head>
+
+<body>
+	<div class="bar-menu">
+		<nav class="navbar-brand">
+			<a href="/user/login"><img src="/logo.png" width="150"></a>
+		</nav>
+		<h2>Agustin Zaragoza Pérez</h2>
+		<ul class="my-characters">
+			<li class="nav-item">
+				<!-- Enlace para ir a la pagina de buscar personajes -->
+    			<a class="nav-link volver" href="/user/login"><< Ir a pagina de inicio</a>
+				<a class="nav-link" href="/personajes/mispersonajes">Mis Personajes</a>
+				<a class="nav-link" href="/personajes/mispersonajes">Personajes compartidos para mi</a>
+			</li>
+		</ul>
+	</div>
+
+	<!-- busqueda de personajes -->
+	<form th:action="@{/personajes/buscarpersonaje}" th:object="${personaje}" th:method="get" class="search">
+		<div class="title-search">
+			<h3>Inserta un nombre de personaje</h3>
+			<div>
+				<input class="input-search" type="text" name="name">
+			</div>
+			<div>
+				<input class="submit-search" type="submit" value="Buscar">
+			</div>
+		</div>
+	</form>
+
+	<div th:if="${param.error}">
+		<p th:text="${param.error}" class="error-message"></p>
+	</div>
+
+
+	<div class="main-container" th:if="${not #lists.isEmpty(personajes)}">
+		<ul class="character-list">
+			<li th:each="personaje : ${personajes}">
+				<table class="main-table">
+
+					<tbody>
+						<tr>
+							<td class="character-image">
+								<img th:src="${personaje.imageUrl}" class="character-image" alt="character image">
+							</td>
+							<td>
+								<h3 class="character-name" th:text="${personaje.name}"></h3>
+							</td>
+							<td class="btn-container">
+
+								<!-- guardar personajes-->
+								<form th:action="@{/personajes/guardarpersonaje}" th:object="${personaje}"
+									th:method="get">
+									<input type="hidden" name="name" th:value="${personaje.name}">
+									<input type="hidden" name="id" th:value="${personaje.id}">
+									<input type="hidden" name="username" th:if="${usuario != null}"
+										th:value="${usuario.getUsuarioId()}">
+									<input type="submit" class="btn-primary" value="Guardar">
+								</form>
+							
+								 <!-- Mostrar los mails de usuarios -->
+                                <form action="/personajes/mailusuarios" th:object="${personaje}" method="get">
+                                    <!-- Agrega un campo oculto para el ID del personaje -->
+                                    <input type="hidden" name="id" th:value="${personaje.id}">
+                                    <!-- Agrega el campo oculto para el email -->
+                                    <input type="hidden" name="email" th:value="${email}">
+                                    <input type="hidden" name="name" th:value="${personaje.name}">
+                                    <input type="submit" class="btn-primary" value="Enviar">
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
