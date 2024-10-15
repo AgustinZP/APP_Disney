@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Esta aplicación web, desarrollada en **Spring Boot**, permite a los usuarios explorar y buscar personajes de Disney a través de la API oficial de Disney. Los usuarios pueden buscar personajes por su nombre en inglés, añadirlos a una lista de favoritos, compartirlos con otros usuarios registrados y calificarlos según su preferencia.
+Esta aplicación web, desarrollada en **Spring Boot**, permite a los usuarios explorar y buscar personajes de Disney a través de la [API de Disney](https://disneyapi.dev/). Los usuarios pueden buscar personajes por su nombre en inglés, añadirlos a una lista de favoritos, compartirlos con otros usuarios registrados y calificarlos según su preferencia.
 
 ## Funcionalidades
 
